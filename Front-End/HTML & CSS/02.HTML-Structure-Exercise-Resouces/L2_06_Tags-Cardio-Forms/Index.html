@@ -1,67 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
+    <style>
+        .label-text {
+            text-transform: capitalize;
+        }
+
+        .option{
+            text-transform: capitalize;
+        }
+
+        label {
+            display: block;
+            margin: 10px;
+        }
+
+        .inline-label {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <form>
         <fieldset>
             <legend>
                 Customer Details
             </legend>
+
+            <label for="first-name">
+                <span class="label-text">First Name</span>
+                <input type="text" id="first-name" name="FirstName" placeholder="George" autofocus>
+            </label>
+
+            <label for="last-name">
+                <span class="label-text">Last Name</span>
+                <input type="text" id="last-name" name="LastName" placeholder="Devis">
+            </label>
+
             <div>
-                <label for="fname">
-                     First Name
+                <label for="gender-male" class="inline-label">
+                    <span class="label-text">Male</span>
+                    <input type="radio" id="gender-male" name="Gender" value="male">
                 </label>
-                <input type="text" id="fname" name="fname" value="George" autofocus>
-            </div>
-            <div>
-                <label for="lname">
-                    Last Name
+    
+                <label for="gender-female" class="inline-label">
+                    <span class="label-text">Female</span>
+                    <input type="radio" id="gender-female" name="Gender" value="female">
                 </label>
-                <input type="text" id="lname" name="lname" value="Devis" autofocus>
+    
+                <label for="gender-other" class="inline-label">
+                    <span class="label-text">Other</span>
+                    <input type="radio" id="gender-other" name="Gender" value="other">
+                </label>
             </div>
+
             <div>
-                <label for="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Female</label>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="other">Other</label>
-                <input type="radio" id="other" name="gender" value="other">
+                <label for="contactMethod" class="inline-label">
+                    Preferred contact method:
+                </label>
+    
+                <label for="contact-method-email" class="inline-label">
+                    <span class="label-text">Email</span>
+                    <input type="radio" id="contact-method-email" name="ContactMethod" value="mail">
+                </label>
+    
+                <label for="contact-method-phone" class="inline-label">
+                    <span class="label-text">Phone</span>
+                    <input type="radio" id="contact-method-phone" name="ContactMethod" value="contactMethod">
+                </label>
             </div>
+
             <div>
-                <label for="contactMethod">Preferred contact method:</label>
-                <label for="mail">Email</label>
-                <input type="radio" id="mail" name="contactMethod" value="mail">
-                <label for="phone">Phone</label>
-                <input type="radio" id="phone" name="contactMethod" value="contactMethod">
+                <label for="eMail">
+                    <span class="label-text">Email</span>
+                    <input type="email" id="eMail" name="Email" placeholder="your@email.com">
+                </label>
             </div>
+
             <div>
-                <label for="eMail">Email</label>
-                <input type="email" id="eMail" name="eMail" value="your@email.com">
+                <label for="phoneNumber">
+                    <span class="label-text">Phone</span>
+                    <input type="tel" id="phoneNumber" name="PhoneNumber" placeholder="+359885236225">
+                </label>
             </div>
+
             <div>
-                <label for="phoneNumber">Phone</label>
-                <input type="phoneNumber" id="phoneNumber" name="phoneNumber" value="+359885236225">
-            </div>
-            <div>
-                <label for="town">Town</label> <select name="cars" id="cars">
-                    <option value="varna">Varma</option>
-                    <option value="plovdiv">Plovdiv</option>
-                    <option value="burgas">Burgas</option>
-                    <option value="sofia">Sofia</option>
-                    <option value="pleven">Pleven</option>
+                <label for="town">
+                    <span class="label-text">Town</span>
+                    <select name="Town" id="town">
+                        <option value="varna">Varna</option>
+                        <option value="plovdiv">Plovdiv</option>
+                        <option value="burgas">Burgas</option>
+                        <option value="sofia">Sofia</option>
+                        <option value="pleven">Pleven</option>
                     </select>
+                </label>
+                 
             </div>
+
             <div>
-                <label for="age">Age</label>
-                <input type="number" min="18" max="70">
+                <label for="age">
+                    <span class="label-text">Age</span>
+                    <input type="number" min="18" max="70">
+                </label>
             </div>
+
             <div>
-                <label for="programmingLanguage">Programming language:</label>
-                <input list="programmingLanguages" name="programmingLanguage" id="programmingLanguage">
+                <label for="programmingLanguage">
+                    Programming language:
+                    <input list="programmingLanguages" name="programmingLanguage" id="programmingLanguage">
                 <datalist id="programmingLanguages">
                     <option value="Java">
                     <option value="PHP">
@@ -71,22 +124,27 @@
                     <option value="Ruby">
                     <option value="Other">
                 </datalist>
-            </div>
-            <div>
-                <label for="additionalInfo"></label>
-                <textarea name="additionalInfo" id="additionalInfo" placeholder="More information..." cols="20" rows="5"></textarea>
-            </div>
-            <div>
-                <label for="consent">
-                    I agree the Terms and Conditions
                 </label>
+            </div>
+
+            <label for="additionalInfo"></label>
+            <textarea name="additionalInfo" id="additionalInfo" placeholder="More information..." cols="20"
+                rows="5"></textarea>
+
+
+            <label for="consent">
                 <input type="checkbox" name="consent" id=consent checked>
-            </div>
-            <div>
-                <label for="submitButton"></label>
+                I agree the Terms and Conditions
+
+            </label>
+            
+
+            <label for="submitButton">
                 <input type="submit" name="submitButton" id="submitButton" value="Send">
-            </div>
+
+            </label>
         </fieldset>
     </form>
 </body>
+
 </html>
