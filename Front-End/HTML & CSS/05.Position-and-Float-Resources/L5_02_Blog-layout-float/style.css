@@ -1,0 +1,81 @@
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+aside a {
+    color: green;
+}
+
+aside { 
+    position: relative;
+    float: right;
+    margin: auto;
+    width: 20%;
+    padding-left: 15px;
+    margin-left: 15px;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    font-size: 1em/1.2;
+}
+
+p.site-title {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.clear {
+    clear: both;
+}
+
+img {
+    border: 5px solid black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0.25);
+    padding: 8px;
+}
+
+.picture1 {
+    float: right;
+    margin-left: 10px;
+}
+
+.picture2 {
+    float: left;
+    margin-right: 10px;
+}
+
+.quoteRight {
+    float: right;
+    width: 650px;
+}
+
+author {
+    display: block;
+    font-style: italic;
+    padding-left: 550px;
+}
+
+blockquote {
+    border-left: 2px solid grey;
+    padding-left: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+hr {
+    border: 1px solid black;
+}
