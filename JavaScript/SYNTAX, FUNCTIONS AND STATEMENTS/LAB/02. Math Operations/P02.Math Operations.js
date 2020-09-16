@@ -12,7 +12,6 @@ function solve(firstNum, secondNum, operator) {
     }
 
     console.log(result);
-
 }
 
 solve(5, 6, '+')
