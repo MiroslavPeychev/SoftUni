@@ -1,14 +1,14 @@
 function sameNumbers(input) {
     let numberAsString = String(input);
-    let areEqual = false;
+    let areEqual = true;
 
-    for (let i = 0; i < numberAsString.length; i++) {
+    for (let i = 0; i < numberAsString.length -1; i++) {
         
        let firstNumber = Number(numberAsString[i]);
        let secondNumber = Number(numberAsString[i + 1]); 
 
-       if (firstNumber === secondNumber) {
-           areEqual = true;
+       if (firstNumber !== secondNumber) {
+           areEqual = false;
        }
 
     }
@@ -19,4 +19,4 @@ function sameNumbers(input) {
     console.log(sum);
 }
 
-sameNumbers(1234);
+sameNumbers(2222222);
