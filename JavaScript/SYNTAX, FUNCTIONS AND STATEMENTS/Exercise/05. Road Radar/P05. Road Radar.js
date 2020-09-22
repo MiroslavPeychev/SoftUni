@@ -19,7 +19,7 @@ function radar(inputArr) {
     function speedTest(speed, speedLimitation) {
         if (speed > speedLimitation && speed <= speedLimitation + 20) {
             console.log('speeding');
-        } else if (speed > speedLimitation + 20 && sped <= speedLimitation + 40) {
+        } else if (speed > speedLimitation + 20 && speed <= speedLimitation + 40) {
             console.log('excessive speeding');
         } else if (speed > speedLimitation + 40) {
             console.log('reckless driving');
