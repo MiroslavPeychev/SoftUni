@@ -3,7 +3,7 @@ function takeFoodCalories(inputArr) {
 
     for (let i = 0; i < inputArr.length; i += 2) {
         let foodName = inputArr[i];
-        let foodCalories = inputArr[i + 1];
+        let foodCalories = Number(inputArr[i + 1]);
 
         foodArgs.push(`${foodName}: ${foodCalories}`);
     }
