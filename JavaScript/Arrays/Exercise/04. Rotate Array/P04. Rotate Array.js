@@ -1,6 +1,6 @@
 function rotateArray(inputArr) {
     let numberOfRotations = Number(inputArr.pop());
-    let realRotationNeeded = numberOfRotations % 100;
+    let realRotationNeeded = numberOfRotations % inputArr.length;
     
     for (let i = 0; i < realRotationNeeded; i++) {
         let lastElement = inputArr.pop();
