@@ -17,9 +17,9 @@ function createJSONfromText(input) {
 
     let JSONToPrint = JSON.stringify(result);
     console.log(JSONToPrint);
+}
 
-    createJSONfromText(['| Town | Latitude | Longitude |',
+createJSONfromText(['| Town | Latitude | Longitude |',
         '| Sofia | 42.696552 | 23.32601 |',
         '| Beijing | 39.913818 | 116.363625 |']
     );
-}
