@@ -26,26 +26,44 @@
     <div id="wrapper">
     </div>
     <script>
-        function fromJSONToHTMLTable(input) {
-            let jsonData = input.shift();
-            let students = JSON.parse(jsonData);
-            let first = students[0];
+       function createHTMLFromJSON(json){
+   
+   let text = JSON.parse(json);
+   let html = "";
 
-            let html = '<table>';
+   html += "<table>\n";
+   html += "   <tr>";
 
-            html += `<tr>${Object.keys(first).map(x => `<th>${x}</th>`).join('')}</tr>`;
+   for (const key in text[0]) {
+       if (text[0].hasOwnProperty(key)) {
+           html += `<th>${key}</th>`;
+       }
+   }
 
-            students.forEach(student => {
-                html += '<tr>';
-                html += Object.values(student).map(x => `<td>${x}</td>`).join('');
-                html += '</tr>';
-            });
+   html += "</tr>\n";
 
-            html += '</table>'
+   for (let i = 0; i < text.length; i++) {
+       const element = text[i];
+       html += "   <tr>";
 
-            return html;
+       for (const value in element) {
+           let cellValue = String(element[value])
+               .replace(/&/gim, '&amp;')
+               .replace(/</gim, '&lt;')
+               .replace(/>/gim, '&gt;')
+               .replace(/"/gim, '&quot;')
+               .replace(/'/gim, '&#39;');
 
-        }
+           html += `<td>${cellValue}</td>`;
+       }
+
+       html += "</tr>\n"
+   }
+
+   html += "</table>";
+
+   console.log(html);
+}
         window.onload = function () {
             let container = document.getElementById('wrapper');
             container.innerHTML = fromJSONToHTMLTable(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']);

@@ -1,30 +1,38 @@
-function createHTMLFromJSON(input) {
-    let jsonData = input.shift();
-    let students = JSON.parse(jsonData);
-    let data = students[0];
+function createHTMLFromJSON(json){
+   
+    let text = JSON.parse(json);
+    let html = "";
 
-    let html = '<table>';
+    html += "<table>\n";
+    html += "   <tr>";
 
-    html += `<tr>${Object.keys(data).map(x => `<th>${x}</th>`).join('')}</tr>`;
-    
-    students.forEach(student => {
-        html+= '<tr>';
-        html+= Object.values(student).map(x => `<td>${x}</td>`).join('');
-        html+= '</tr>';
-    });
-
-    html+='</table>'
-
-    for (const value in element) {
-        let cellValue = String(element[value])
-            .replace(/&/gim, '&amp;')
-            .replace(/</gim, '&lt;')
-            .replace(/>/gim, '&gt;')
-            .replace(/"/gim, '&quot;')
-            .replace(/'/gim, '&#39;');
-
-        result += `<td>${cellValue}</td>`;
+    for (const key in text[0]) {
+        if (text[0].hasOwnProperty(key)) {
+            html += `<th>${key}</th>`;
+        }
     }
+
+    html += "</tr>\n";
+
+    for (let i = 0; i < text.length; i++) {
+        const element = text[i];
+        html += "   <tr>";
+
+        for (const value in element) {
+            let cellValue = String(element[value])
+                .replace(/&/gim, '&amp;')
+                .replace(/</gim, '&lt;')
+                .replace(/>/gim, '&gt;')
+                .replace(/"/gim, '&quot;')
+                .replace(/'/gim, '&#39;');
+
+            html += `<td>${cellValue}</td>`;
+        }
+
+        html += "</tr>\n"
+    }
+
+    html += "</table>";
 
     console.log(html);
 }
