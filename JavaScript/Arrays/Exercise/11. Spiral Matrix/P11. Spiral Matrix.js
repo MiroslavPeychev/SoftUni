@@ -1,6 +1,6 @@
 function fillSpiralMatrix(rows, cols) {
     
-    let result = new Array(rows).map(() => new Array(cols).fill(''));
+    let result = new Array(rows).fill().map(() => new Array(cols).fill(''));
     let counter = 1;
     let startCol = 0;
     let endCol = cols - 1;
@@ -8,6 +8,7 @@ function fillSpiralMatrix(rows, cols) {
     let endRow = rows - 1;
 
     while(startCol <= endCol && startRow <= endRow) {
+        
         for (let i = startCol; i <= endCol; i++) {
             result[startRow][i] = counter;
             counter++;
@@ -23,14 +24,14 @@ function fillSpiralMatrix(rows, cols) {
         endCol--;
 
         for (let k = endCol; k >= startCol; k--) {
-            result[endRow][i] = counter;
+            result[endRow][k] = counter;
             counter++;
         }
 
         endRow--;
 
         for (let m = endRow; m >= startRow; m--) {
-            result[i][startCol] = counter;
+            result[m][startCol] = counter;
             counter++;
         }
 
