@@ -21,7 +21,7 @@ function solve(inputData) {
 
         for (const component of sortedComponents) {
             console.log(`|||${component}`);
-            register[system][component].forEach(x => console.log(`|||||${x}`));
+            register[system][component].forEach(x => console.log(`||||||${x}`));
         }
     }
 }
