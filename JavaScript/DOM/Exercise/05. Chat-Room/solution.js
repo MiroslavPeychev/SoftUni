@@ -6,9 +6,7 @@ function solve() {
 
    sendButton.addEventListener('click', function () {
       let div = myMessagesTemplate.cloneNode(true);
-      let message = inputAsText.nodeValue;
-
-      let isTyping = document.getElementById("typing");
+      let message = inputAsText.value;
 
       if (message !== '') {
          div.textContent = message;
