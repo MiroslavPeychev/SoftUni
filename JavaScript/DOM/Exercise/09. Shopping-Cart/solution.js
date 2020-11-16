@@ -1,6 +1,6 @@
 function solve() {
     Array.from(document.querySelectorAll('.add-product')).forEach(x => x.addEventListener('click', add));
-    document.querySelector('.checkout').addEventListener('clicl', checkout);
+    document.querySelector('.checkout').addEventListener('click', checkout);
 
     const products = {
         'Bread': 0.8,
@@ -9,7 +9,7 @@ function solve() {
     }
 
     const bought = [];
-    const textArea = document.querySelector('textares');
+    const textArea = document.querySelector('textarea');
     let cost = 0;
     let textOutput = '';
 
