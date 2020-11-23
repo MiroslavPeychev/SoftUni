@@ -1,21 +1,21 @@
 function focus() {
-    let elements = document.getElementsByTagName('div')[0];
+    let elements = document.getElementsByTagName("div")[0];
 
-    Array.from(elements.getElementsByTagName('input')).forEach(element => {
-        element.addEventListener('focus', focus)
+    Array.from(elements.getElementsByTagName("input")).forEach(element => {
+        element.addEventListener("focus", focuseElement);
     });
 
-    Array.from(elements.getElementsByTagName('input')).forEach(element => {
-        element.addEventListener('blur', unfocuse)
+    Array.from(elements.getElementsByTagName("input")).forEach(element => {
+        element.addEventListener("blur", unfocuseElement);
     });
 
-    function focus(e) {
-        let parent = e.tartet.parentNode;
-        parent.classList.add('focused')
+    function focuseElement(e) {
+        let parent = e.target.parentNode;
+        parent.classList.add("focused");
     }
 
-    function unfocuse(e) {
-        let parent = e.tartet.parentNode;
-        parent.classList.remove('focused')
+    function unfocuseElement(e) {
+        let parent = e.target.parentNode;
+        parent.classList.remove("focused");
     }
 }
