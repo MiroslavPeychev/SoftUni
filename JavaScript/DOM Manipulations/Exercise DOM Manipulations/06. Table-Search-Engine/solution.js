@@ -7,13 +7,13 @@ function solve() {
       let searchInput = searchInputElement.value;
       let regex = new RegExp(searchInput, 'gim');
 
-      Array.from(allRowsElements.map(currentTableRow => {
+      Array.from(allRowsElements).map(currentTableRow => {
          currentTableRow.classList.remove('select');
 
          if (currentTableRow.textContent.match(regex) !== null) {
             currentTableRow.classList.add('select');
          }
-      }));
+      });
 
       searchInputElement.value = '';
    });
