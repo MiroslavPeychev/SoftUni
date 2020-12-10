@@ -1,5 +1,5 @@
 function attachEventsListeners() {
-    let buttonElements = document.querySelectorAll('input[value="convert"]');
+    let buttonElements = document.querySelectorAll('input[value="Convert"]');
     let daysInput = document.getElementById('days');
     let hoursInput = document.getElementById('hours');
     let minutesInput = document.getElementById('minutes');
@@ -37,5 +37,5 @@ function attachEventsListeners() {
             default:
                 break;
         }
-    }));
+    }))
 }
