@@ -5,6 +5,5 @@ function notify(message) {
 
     setTimeout(function () {
         area.style.display = 'none';
-
     }, 2000)
 }
