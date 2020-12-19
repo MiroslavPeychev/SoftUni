@@ -48,5 +48,14 @@ function solve() {
       return player;
    }
 
-   function
+   function defaultValues() {
+      result[0].textContent = '';
+      result[2].textContent = '';
+      playerFirstCard = '';
+      playerSecondCard = '';
+   }
+
+   function saveHistory() {
+      history.textContent += `[${playerFirstCard.name} vs ${playerSecondCard.name}] `;
+   }
 }
